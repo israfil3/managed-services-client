@@ -5,8 +5,10 @@ import './index.css'
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import Header from './Components/Header/Header.jsx';
 import OneItem from './Components/FunctionPage/OneItem/OneItem.jsx';
-import SingUp from './Components/Autishoing/SingUp/SingUp.jsx';
-import Login from './Components/Autishoing/Login/Login.jsx';
+import AuthProvider from './Components/provider/AuthProvider.jsx';
+import SingUp from './Components/SingUp/SingUp.jsx';
+import Login from './Components/Login/Login.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -30,12 +32,15 @@ const router = createBrowserRouter([
       {
         path:'login',
         element:<Login></Login>
+        
       }
   ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-      <RouterProvider router={router} />
-  </React.StrictMode>,
+  <AuthProvider>
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>,
+  </AuthProvider>
 )
