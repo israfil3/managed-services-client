@@ -11,7 +11,7 @@ const Contact = () => {
     console.log(watch("example"));
     return (
         <div className="w-[90%] my-20  mx-auto">
-                      <h1 className="bg-slate-200 w-[130px] py-4 my-5 pl-2 rounded">CONTACT US</h1>
+                      <h1 className="bg-slate-200 w-[130px] py-4 my-5 pl-2 shadow-lg rounded">CONTACT US</h1>
                     <div className="flex justify-between items-center">
                         <div className="">
                             <div className="">
@@ -51,7 +51,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-slate-300 p-20 rounded">
+                        <div className="bg-slate-200 p-20 rounded shadow-xl">
                             <div className="">
                                 <h1 className="font-bold text-center">Schedule a Free Consultation</h1>
                                 <hr className="border-2 border-b-gray-900"/>

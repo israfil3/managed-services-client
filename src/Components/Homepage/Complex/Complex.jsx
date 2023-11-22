@@ -1,7 +1,7 @@
 const Complex = () => {
     return (
         <>
-            <div className="bg-black text-white flex justify-between items-center w-[90%] mx-auto px-[30px] my-10">
+            <div className="bg-black text-white flex justify-between items-center w-[90%] mx-auto px-[30px] my-10 py-10 rounded">
                 <div className="my-[15px]">
                     <h1 className="btn">WHAT WE DO</h1>
                     <h2 className="text-5xl my-10">Simplifying IT <br />

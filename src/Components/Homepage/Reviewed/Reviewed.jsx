@@ -4,7 +4,7 @@ import { FaRegStar, FaStar } from "react-icons/fa6";
 
 const Reviewed = () => {
     return (
-        <div className="grid grid-cols-5 w-[90%] mx-auto dk">
+        <div className="grid grid-cols-5 w-[90%] mx-auto mk">
             <div className="">
                 <div className="">
                     <h2>REVIEWED ON <span>
@@ -21,15 +21,15 @@ const Reviewed = () => {
                   <h2><span className='text-[22px]'>Clutch</span> 31 REVIEWS</h2>  
                 </div>
             </div>
-            <div className="border-l-4">
+            <div className="border-dotted border-l-4">
                 <h1>20Years</h1>
                 <h2>Proven Track Record</h2>
             </div>
-            <div className="border-l-4">
+            <div className="border-dotted border-l-4">
                 <h1>98%</h1>
                 <h2>Customer Satisfaction</h2>
             </div>
-            <div className="border-l-4">
+            <div className="border-dotted border-l-4">
                 <h1>1,500 Projects</h1>
                 <h2>We Have Completed</h2>
             </div>
