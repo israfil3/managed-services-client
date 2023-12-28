@@ -8,6 +8,11 @@ import OneItem from './Components/FunctionPage/OneItem/OneItem.jsx';
 import AuthProvider from './Components/provider/AuthProvider.jsx';
 import SingUp from './Components/SingUp/SingUp.jsx';
 import Login from './Components/Login/Login.jsx';
+import Dashboard from './Components/Dashboard/mainDashboard/Dashboard.jsx';
+import Man from './Components/Dashboard/man/Man.jsx';
+import Request from './Components/Dashboard/ContactRequset/Request.jsx';
+import AddService from './Components/Dashboard/AddService/AddService.jsx';
+import ManageService from './Components/Dashboard/ManageService/ManageService.jsx';
 
 
 
@@ -36,7 +41,30 @@ const router = createBrowserRouter([
       }
   ]
   },
+  {
+    path: 'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'man',
+        element:<Man></Man>
+      },
+      {
+        path: 'request',
+        element:<Request></Request>
+      },
+      {
+        path:"addService",
+        element:<AddService></AddService>
+      },
+      {
+        path:"manageService",
+        element:<ManageService></ManageService>
+      }
+    ]
+  }
 ]);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider>
     <React.StrictMode>

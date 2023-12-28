@@ -1,0 +1,11 @@
+.ds ul{
+    padding:10px;
+    height: 100vh;
+    background-color: green;
+}
+.ds li {
+    margin: 10px;
+    font-size: 20px;
+    background: rgb(148, 223, 148);
+    border-radius: 10px;
+}

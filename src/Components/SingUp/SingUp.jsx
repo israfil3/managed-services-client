@@ -4,6 +4,7 @@ import sing from '../../../sing.json'
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import axios from "axios";
 
 
 
@@ -16,19 +17,24 @@ const SingUp = () => {
     const singMethod = (event) => {
         event.preventDefault()
         const form = event.target;
-        const name = form.name.value;
+        const firstName = form.firstName.value;
+        const lastName = form.lastName.value
         const email =form.email.value;
         const password = form.password.value
         const url = form.url.value;
-        if(password.length < 6){
-            return alert('at list 6 digit password now')
-        }
         createUser(email,password)
         .then(result => {
             const user = result.user;
-            navigate(from , {replace: true})
-            event.target.reset();
-            console.log(user)
+            axios.post(`http://localhost:5000/userParson`,{
+                name: firstName+" "+lastName,
+                email:email
+            })
+            .then(data => {
+                console.log(data.data)
+                navigate(from , {replace: true})
+                event.target.reset();
+                console.log(user)
+            })
         })
         .catch(error=>{
             console.log(error)
@@ -54,10 +60,10 @@ const SingUp = () => {
             </div>
                 <div className='text-center'>
          <form onSubmit={singMethod}  className='form-area text-center'>
-                <input type="text" name="name" id="name"  placeholder='Entry Your Name'required/><br />
+                <input type="text" name="firstName" id="name"  placeholder='Entry Your First Name'required/><br />
+                <input type="text" name="lastName" id="name"  placeholder='Entry Your Last Name'required/><br />
                 <input type="email" name="email" id="email"  placeholder='Entry your Email'/><br />
                 <input type="password" name="onlyPassword" id="password" placeholder='Entry your password' required/><br />
-                <input type="password" name="conformPassword" id="password"  placeholder='Conform your password' required/><br />
                 <input type="url" name="url" id="url"  placeholder='Entry Your Photo Url' required/><br />
                 <input className='btn my-5 btn-outline btn-error' type="submit" value="Sing Up" /><br />
                 <p className='tx'>Al-ready you have a account now<Link to={'/login'} className='text-green-500'> Log in </Link>  </p>

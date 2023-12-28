@@ -1,13 +1,42 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './navbar.css'
 import { FaBars,FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const {logout} = useContext(AuthContext)
 
     const toggleMenu = () => {
       setMenuOpen(!menuOpen);
     };
+
+    const singOut = () =>{
+      Swal.fire({
+         title: "Are you sure?",
+         text: "Log out this page",
+         icon: "warning",
+         showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+         cancelButtonColor: "#d33",
+         confirmButtonText: "Yes!"
+       }).then((result) => {
+         if (result.isConfirmed) {
+           Swal.fire({
+             title: "Deleted account!",
+             text: "Log out successful.",
+             icon: "success"
+           });
+           logout()
+            .then(() => {
+               // Sign-out successful.
+            }).catch((error) => {
+               console.log(error)
+            });
+               }
+        });
+      }
   
     return (
         <>
@@ -34,6 +63,12 @@ const Navbar = () => {
                     </li>
                     <li>
                        <Link to={`login`}>Login</Link>
+                    </li>
+                    <li>
+                     <Link onClick={singOut}>Log out</Link>
+                    </li>
+                    <li>
+                       <Link to={`dashboard`}>Dashboard</Link>
                     </li>
                 </ul>  
                </div>

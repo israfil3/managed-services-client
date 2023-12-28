@@ -1,12 +1,68 @@
 import { useForm } from "react-hook-form";
 import { FaCheck } from "react-icons/fa6";
 import './contact.css'
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Contact = () => {
-
+    const {user} = useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data) => {
+       if(user && user.email){
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, submit it!",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const contactPerson = {
+                        firstName: data.firstName,
+                        companyName: data.company,
+                        lastName: data.lastName,
+                        companyEmail: data.email,
+                        email: user?.email,
+                        phone: parseInt(data.number),
+                        services: data.section,
+                        message: data.textarea,
+                    };
+        
+                    fetch("http://localhost:5000/parsonContact", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(contactPerson),
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            Swal.fire({
+                                title: "Submitted!",
+                                text: "Your data has been submitted.",
+                                icon: "success",
+                            });
+                            
+                            console.log(data);
+                            
+                        })
+                        .catch((error) => {
+                            console.error("Error submitting data:", error);
+                            Swal.fire({
+                                title: "Error",
+                                text: "An error occurred while submitting data.",
+                                icon: "error",
+                            });
+                        });
+                }
+            });
+        }
+    };
+    
   
     console.log(watch("example"));
     return (
@@ -74,7 +130,7 @@ const Contact = () => {
                                         </div>
                                         <div className="mt-5">
                                             <p className="mr-2">Company email</p>
-                                            <input  type="email" className="w-full text-black placeholder-black  rounded py-2"  {...register("email", { required: true })}  />
+                                            <input type="email" className="w-full text-black placeholder-black  rounded py-2"  {...register("email", { required: true })}  />
                                         </div>
                                         <div className="mt-5">
                                             <p className="mr-2">Phone</p>
@@ -84,7 +140,7 @@ const Contact = () => {
                                             <p className="mr-2">Section</p>
                                                 <select
                                                     className="  rounded py-2 w-full  text-black"
-                                                    {...register("Section")}
+                                                    {...register("section")}
                                                 >
                                                     <option value="Select Option">Select Option</option>
                                                     <option value="Managed Services">Managed Services</option>
@@ -110,8 +166,10 @@ const Contact = () => {
                                 
                                         {errors.exampleRequired && <span>This field is required</span>}
                                         
-                                        <input className="btn mt-5" type="submit" />
-                                        </form>
+                                        {
+                                            user?<input className="btn mt-5" type="submit" />:<p className="text-center p-5 bg-red-500 rounded">First sing up or login then Contact</p>
+                                        }
+                                    </form>
                             </div>
                         </div>
                     </div>
