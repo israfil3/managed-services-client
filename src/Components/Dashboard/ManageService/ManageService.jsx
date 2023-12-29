@@ -153,7 +153,7 @@ const ManageService = () => {
                 </div>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid lg:grid-cols-3 gap-10">
                 {
                   item.map(items => 
                          <div key={items._id} className="border w-[350px] p-5 bg-white rounded shadow-lg">

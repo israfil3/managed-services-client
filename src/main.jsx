@@ -13,6 +13,7 @@ import Man from './Components/Dashboard/man/Man.jsx';
 import Request from './Components/Dashboard/ContactRequset/Request.jsx';
 import AddService from './Components/Dashboard/AddService/AddService.jsx';
 import ManageService from './Components/Dashboard/ManageService/ManageService.jsx';
+import { FaHome } from 'react-icons/fa';
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         path:'login',
         element:<Login></Login>
         
+      },
+      {
+        path:"home",
+        element:<Header></Header>
       }
   ]
   },
@@ -60,6 +65,10 @@ const router = createBrowserRouter([
       {
         path:"manageService",
         element:<ManageService></ManageService>
+      },
+      {
+        path:"home",
+        element:<Header></Header>
       }
     ]
   }

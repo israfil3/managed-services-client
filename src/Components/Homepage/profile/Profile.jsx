@@ -6,7 +6,7 @@ import './profile.css'
 
 const Profile = () => {
     return (
-        <div className='dk grid grid-cols-4 gap-5 w-[90%] mx-auto my-10'>
+        <div className='dk lg:grid grid-cols-4 gap-5 w-[90%] mx-auto my-10'>
             <div className="lk">
                 <img src={img1} alt="" />
                 <h1>Cost-effectiveness</h1>

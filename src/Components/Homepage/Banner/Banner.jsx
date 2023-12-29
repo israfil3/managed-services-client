@@ -5,7 +5,7 @@ import Web_Sell from '../../../../Web_site_sell.json'
 const Banner = () => {
     return (
         <>
-        <div className='flex justify-center items-center w-[90%] mx-auto'>
+        <div className='lg:flex justify-center items-center lg:w-[90%] mx-auto'>
         <div className="">
             <h1 className='text-5xl my-10'>We manage your IT, so you can manage your business.</h1>
             <h2 className='text-3xl'>Take charge of your business continuity with innovative IT solutions</h2>

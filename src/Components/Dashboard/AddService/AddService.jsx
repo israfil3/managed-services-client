@@ -56,7 +56,7 @@ const AddService = () => {
          <h1 className="text-4xl text-center mt-10  font-bold">Add Service</h1>
          <hr  className="border-2 border-black w-[20%] mx-auto"/>
          <hr  className="border-2 border-black w-[15%] mx-auto mt-2"/>
-       <div className="p-10 flex items-center justify-center ">
+       <div className="p-10 lg:flex items-center justify-center ">
         <div className="">
             <Lottie animationData={addService}></Lottie>
         </div>
@@ -93,7 +93,9 @@ const AddService = () => {
             </div>
             </div>
           {errors.exampleRequired && <span>This field is required</span>}
-          <input className="btn my-5" type="submit" value="Submit" />
+            <div className="mx-auto w-[30%]">
+            <input className="btn my-5" type="submit" value="Submit" />
+            </div>
          </form>
          </div>
         </div>

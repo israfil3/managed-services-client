@@ -28,7 +28,7 @@ const Item = () => {
                     <h1 className="bg-slate-400 text-white w-[130px] py-4 btn-disabled pl-2 rounded">HOW WE DO</h1>
                     <p className="my-10 font-bold text-4xl">Solutions</p>
                 </div>
-                <div className="grid grid-cols-3 h-full gap-10 ">
+                <div className="grid lg:grid-cols-3 h-full gap-10 ">
                     {visibleProducts.map((product) => (
                         <div key={product._id} className="border w-[350px] p-5 bg-white rounded shadow-lg">
                             <img className="w-[70px] " src={product.img} alt="" />

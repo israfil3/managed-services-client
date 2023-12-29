@@ -27,7 +27,7 @@ const Login = () => {
         })
     }   
     return (
- <div className='flex gap-24 items-center justify-center w-[80%] mx-auto px-10 my-20 border shadow-xl'>
+ <div className='lg:flex gap-24 items-center justify-center w-[80%] mx-auto px-10 my-20 border shadow-xl'>
         <div className="">
                 <Lottie animationData={loginF}></Lottie>
         </div>

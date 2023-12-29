@@ -68,7 +68,7 @@ const Contact = () => {
     return (
         <div className="w-[90%] my-20  mx-auto">
                       <h1 className="bg-slate-200 w-[130px] py-4 my-5 pl-2 shadow-lg rounded">CONTACT US</h1>
-                    <div className="flex justify-between items-center">
+                    <div className="lg:flex justify-between items-center">
                         <div className="">
                             <div className="">
                                 <p className="text-5xl font-bold">Partner with Us for <br /> Comprehensive IT</p>
@@ -87,9 +87,9 @@ const Contact = () => {
                                      <h4 className="flex items-center"><span className="bg-blue-400 p-2 rounded-full mr-4"><FaCheck></FaCheck></span>Transparent</h4>
                                </div>
                             </div>
-                            <div className="">
+                            <div className="lg:my-0 my-5">
                                 <h1 className="font-bold my-5">What happens next?</h1>
-                                <div className="flex gap-5 text-[17px]">
+                                <div className="lg:flex gap-5 sm:gap-7 text-[17px]">
                                     <div className="flex items-center">
                                         <h1 className="text-2xl font-bold mr-5">
                                          1
@@ -107,7 +107,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-slate-200 p-20 rounded shadow-xl">
+                        <div className="bg-slate-200 lg:p-20 p-5 rounded shadow-xl">
                             <div className="">
                                 <h1 className="font-bold text-center">Schedule a Free Consultation</h1>
                                 <hr className="border-2 border-b-gray-900"/>

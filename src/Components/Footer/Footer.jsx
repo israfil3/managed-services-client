@@ -5,8 +5,8 @@ const Footer = () => {
        <>
         <footer className="footer p-10 bg-base-200 text-base-content">
             <div>
-                <p className='text-2xl '>All Steinway School.<br/>Providing reliable tech since 2022</p>
-                <p className='text-[15px] my-10'>this is school on of the best <br></br> music school in USA</p>
+                <p className='text-2xl '>Managed-services.<br/>Providing reliable tech since 2022</p>
+                <p className='text-[15px] my-10'>this is company on of the best <br></br> it company in USA</p>
             </div> 
                     <div className='text-[18px]'>
                         <span className="footer-title flex gap-5"><FaServer></FaServer>Services</span> 

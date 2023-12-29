@@ -1,7 +1,7 @@
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.252);
+    background-color: rgba(152, 95, 179, 0.252);
     padding: 10px 30px;
 }
 #item-link {

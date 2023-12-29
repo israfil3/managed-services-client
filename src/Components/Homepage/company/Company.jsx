@@ -18,12 +18,12 @@ const [company,setCompany] = useState([]);
                 <p className="bg-slate-200 w-[130px] py-4 px-2 rounded">WHERE WE DO</p>
                 <h1 className="text-5xl my-10 font-bold">Success Stories</h1>
             </div>
-            <div className="grid grid-cols-3 gap-10 ">
+            <div className="grid lg:grid-cols-3 gap-10 ">
                 {
                     company.map(com =>
                         <>
                             <div id={com._id}>         
-                              <div className="card w-96 h-[100%] bg-base-100 shadow-xl border">
+                              <div className="card lg:w-96 h-[100%] bg-base-100 shadow-xl border">
                                 <figure className="px-10 pt-10">
                                 <img src={com.img} alt="" />
                                 </figure>

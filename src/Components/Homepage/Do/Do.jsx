@@ -18,7 +18,7 @@ const Do = () => {
                     <p className="bg-slate-200 w-[130px] py-4 btn-disabled pl-2 rounded">HOW WE DO</p>
                     <h1 className="text-5xl font-bold my-10">Solving IT challenges in every <br /> industry, every day.</h1>
                 </div>
-               <div className="grid grid-cols-3 gap-10 ">
+               <div className="grid lg:grid-cols-3 gap-10 ">
                     {
                             workData.map(work => 
                             <>
